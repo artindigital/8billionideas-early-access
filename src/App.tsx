@@ -20,7 +20,7 @@ import {
   Linkedin
 } from 'lucide-react';
 
-const TYPEFORM_URL = "https://form.typeform.com/to/placeholder";
+const TYPEFORM_URL = "https://8billionideas.typeform.com/to/Ue4NLuLs";
 
 const FadeIn: React.FC<{ children: React.ReactNode, delay?: number, className?: string }> = ({ children, delay = 0, className = "" }) => (
   <motion.div
@@ -91,11 +91,14 @@ export default function App() {
                 }
               `}} />
               <div className="relative w-full aspect-video rounded-3xl overflow-hidden shadow-2xl mb-12 bg-gray-900 border-2 border-purple-500 backdrop-blur-sm video-glow">
-                <iframe
-                  src="https://www.youtube.com/embed/51n-9ypgoDI?rel=0"
-                  className="absolute top-0 left-0 w-full h-full"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
+                <video
+                  src="/video1.MOV"
+                  className="absolute top-0 left-0 w-full h-full object-cover"
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  controls
                 />
               </div>
               <div className="text-center max-w-4xl mx-auto px-4 pt-8">
@@ -124,7 +127,8 @@ export default function App() {
                   title: "Mission Hide & Seek",
                   icon: <Coins className="w-6 h-6 text-brand-600" />,
                   desc: "An adventure-style course that teaches young children the fundamentals of financial literacy and personal safety — in the most playful, age-appropriate way possible. Through games, stories, and missions, children learn why keeping things safe matters, both in the real world and online.",
-                  tag: "KS 1 • Finance",
+                  tag: "Ages 7-10 • Finance",
+                  price: "50 AED",
                   accredited: false,
                   img: "/mission.png"
                 },
@@ -132,7 +136,8 @@ export default function App() {
                   title: "Across the Board",
                   icon: <Dice5 className="w-6 h-6 text-brand-600" />,
                   desc: "What if your child could learn entrepreneurship by actually building something? In Across the Board, kids design, prototype, and pitch their own board game — going through every stage of a real product launch in a way that's exciting, creative, and deeply educational",
-                  tag: "KS 2 • Entrepreneurship",
+                  tag: "Ages 10-13 • Entrepreneurship",
+                  price: "50 AED",
                   accredited: false,
                   img: "/healthy.png"
                 },
@@ -140,7 +145,8 @@ export default function App() {
                   title: "Startup School",
                   icon: <Rocket className="w-6 h-6 text-brand-600" />,
                   desc: "The speedrun approach to building a startup. Students go from blank page to a launched concept in one accelerated course — covering ideation, validation, branding, and pitching. It's intense, it's real, and it's the kind of experience that changes how a young person sees the world.",
-                  tag: "KS 3 • Entrepreneurship",
+                  tag: "Ages 14-16 • Entrepreneurship",
+                  price: "250 AED",
                   accredited: true,
                   img: "/startup.png"
                 },
@@ -148,7 +154,8 @@ export default function App() {
                   title: "The Internship",
                   icon: <Briefcase className="w-6 h-6 text-brand-600" />,
                   desc: "A fully virtual work experience that puts students inside the different departments of a real company — marketing, operations, finance, product, and more. They work on real briefs, build portfolio pieces, and leave with a professional body of work they can actually show to universities and employers.",
-                  tag: "KS 4 • Careers",
+                  tag: "Ages 16-18 • Careers",
+                  price: "250 AED",
                   accredited: true,
                   img: "/internship.png"
                 }
@@ -187,6 +194,9 @@ export default function App() {
                       </div>
                       <h3 className="text-2xl font-display font-bold text-gray-900 mb-3">{prog.title}</h3>
                       <p className="text-gray-500 leading-relaxed flex-grow mb-6">{prog.desc}</p>
+                      <div className="mb-6 pb-6 border-b border-gray-200">
+                        <p className="text-lg font-display font-bold text-gray-900">{prog.price}</p>
+                      </div>
                       <a
                         href={TYPEFORM_URL}
                         target="_blank"
@@ -401,9 +411,21 @@ export default function App() {
                   One-time payment
                 </div>
 
-                <div className="flex justify-center items-baseline mb-6">
-                  <span className="text-6xl font-display font-bold text-gray-900 tracking-tight">£45</span>
-                  <span className="text-lg text-gray-500 ml-2">/ programme</span>
+                <div className="space-y-8 mb-8">
+                  <div>
+                    <h3 className="text-lg font-semibold text-gray-900 mb-2">Ages 7 to 14</h3>
+                    <div className="flex justify-center items-baseline">
+                      <span className="text-5xl font-display font-bold text-gray-900 tracking-tight">50 AED</span>
+                    </div>
+                    <p className="text-gray-600 mt-2 text-sm">Mission Hide & Seek • Across the Board</p>
+                  </div>
+                  <div className="border-t border-gray-200 pt-8">
+                    <h3 className="text-lg font-semibold text-gray-900 mb-2">Ages 14 to 18 (Accredited)</h3>
+                    <div className="flex justify-center items-baseline">
+                      <span className="text-5xl font-display font-bold text-gray-900 tracking-tight">250 AED</span>
+                    </div>
+                    <p className="text-gray-600 mt-2 text-sm">Startup School • The Internship</p>
+                  </div>
                 </div>
                 <p className="text-gray-600 mb-8">Full lifetime access to your chosen programme materials.</p>
 
