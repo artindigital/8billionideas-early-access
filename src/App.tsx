@@ -92,7 +92,7 @@ export default function App() {
               `}} />
               <div className="relative w-full aspect-video rounded-3xl overflow-hidden shadow-2xl mb-12 bg-gray-900 border-2 border-purple-500 backdrop-blur-sm video-glow">
                 <video
-                  src="/video1.MOV"
+                  src="/video1.mp4"
                   className="absolute top-0 left-0 w-full h-full object-cover"
                   autoPlay
                   loop
@@ -121,6 +121,7 @@ export default function App() {
               </div>
             </FadeIn>
 
+            
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
               {[
                 {
@@ -130,7 +131,8 @@ export default function App() {
                   tag: "Ages 7-10 • Finance",
                   price: "50 AED",
                   accredited: false,
-                  img: "/mission.png"
+                  img: "/mission.png",
+                  discount: "90% off"
                 },
                 {
                   title: "Across the Board",
@@ -139,7 +141,8 @@ export default function App() {
                   tag: "Ages 10-13 • Entrepreneurship",
                   price: "50 AED",
                   accredited: false,
-                  img: "/healthy.png"
+                  img: "/healthy.png",
+                  discount: "90% off"
                 },
                 {
                   title: "Startup School",
@@ -148,7 +151,8 @@ export default function App() {
                   tag: "Ages 14-16 • Entrepreneurship",
                   price: "250 AED",
                   accredited: true,
-                  img: "/startup.png"
+                  img: "/startup.png",
+                  discount: "75% off"
                 },
                 {
                   title: "The Internship",
@@ -157,11 +161,22 @@ export default function App() {
                   tag: "Ages 16-18 • Careers",
                   price: "250 AED",
                   accredited: true,
-                  img: "/internship.png"
+                  img: "/internship.png",
+                  discount: "75% off"
                 }
               ].map((prog, idx) => (
                 <FadeIn key={idx} delay={idx * 0.1}>
-                  <div className="group bg-white rounded-2xl border border-gray-200 overflow-hidden hover:shadow-xl hover:border-brand-200 transition-all duration-300 flex flex-col h-full">
+                  <div className="group bg-white rounded-2xl border border-gray-200 overflow-hidden hover:shadow-xl hover:border-brand-200 transition-all duration-300 flex flex-col h-full relative">
+                    {/* Discount pill */}
+                    <span
+                      className={`absolute top-4 left-4 z-20 px-3 py-1.5 rounded-full text-xs font-bold shadow-md
+                        ${prog.discount === "90% off"
+                          ? "bg-red-500 text-white"
+                          : "bg-yellow-400 text-gray-900"}
+                      `}
+                    >
+                      {prog.discount}
+                    </span>
                     <div className="h-48 overflow-hidden relative bg-gray-100">
                       <img
                         src={prog.img}
@@ -210,6 +225,7 @@ export default function App() {
                   </div>
                 </FadeIn>
               ))}
+
             </div>
           </div>
         </section>
