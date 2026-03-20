@@ -129,20 +129,20 @@ export default function App() {
                   icon: <Coins className="w-6 h-6 text-brand-600" />,
                   desc: "An adventure-style course that teaches young children the fundamentals of financial literacy and personal safety — in the most playful, age-appropriate way possible. Through games, stories, and missions, children learn why keeping things safe matters, both in the real world and online.",
                   tag: "Ages 7-10 • Finance",
-                  price: "50 AED",
+                  price: "FREE",
                   accredited: false,
                   img: "/mission.png",
-                  discount: "90% off"
+                  discount: "LIMITED TIME OFFER"
                 },
                 {
                   title: "Across the Board",
                   icon: <Dice5 className="w-6 h-6 text-brand-600" />,
                   desc: "What if your child could learn entrepreneurship by actually building something? In Across the Board, kids design, prototype, and pitch their own board game — going through every stage of a real product launch in a way that's exciting, creative, and deeply educational",
                   tag: "Ages 10-13 • Entrepreneurship",
-                  price: "50 AED",
+                  price: "FREE",
                   accredited: false,
                   img: "/healthy.png",
-                  discount: "90% off"
+                  discount: "LIMITED TIME OFFER"
                 },
                 {
                   title: "Startup School",
@@ -152,7 +152,7 @@ export default function App() {
                   price: "250 AED",
                   accredited: true,
                   img: "/startup.png",
-                  discount: "75% off"
+                  discount: "75% OFF"
                 },
                 {
                   title: "The Internship",
@@ -162,7 +162,7 @@ export default function App() {
                   price: "250 AED",
                   accredited: true,
                   img: "/internship.png",
-                  discount: "75% off"
+                  discount: "75% OFF"
                 }
               ].map((prog, idx) => (
                 <FadeIn key={idx} delay={idx * 0.1}>
@@ -172,7 +172,7 @@ export default function App() {
                       className={`absolute top-4 left-4 z-20 px-3 py-1.5 rounded-full text-xs font-bold shadow-md
                         ${prog.discount === "90% off"
                           ? "bg-red-500 text-white"
-                          : "bg-yellow-400 text-gray-900"}
+                          : "bg-red-500 text-white"}
                       `}
                     >
                       {prog.discount}
@@ -431,7 +431,7 @@ export default function App() {
                   <div>
                     <h3 className="text-lg font-semibold text-gray-900 mb-2">Ages 7 to 14</h3>
                     <div className="flex justify-center items-baseline">
-                      <span className="text-5xl font-display font-bold text-gray-900 tracking-tight">50 AED</span>
+                      <span className="text-5xl font-display font-bold text-gray-900 tracking-tight">FREE</span>
                     </div>
                     <p className="text-gray-600 mt-2 text-sm">Mission Hide & Seek • Across the Board</p>
                   </div>
